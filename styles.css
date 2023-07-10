@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css" ;
+body{
+    background: rgb(218,253,29);
+    background: linear-gradient(90deg, rgba(218,253,29,1) 50%, rgba(252,170,69,1) 100%);
+}
+.form-control{
+    color: bisque;
+}

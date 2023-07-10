@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>Register</title>
+</head>
+<div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark"></nav>
+  <h1 style="text-align: center;">CSK Squad list</h1>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark"></nav>
+</div>
+
+
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="registerForm"(ngSubmit)="onSubmit()">
+        <div class="form-goup">
+          <label for="FirstName">FirstName</label>
+          <input formControlName="firstName" type="text" class="form-control"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls.firstName.errors}"/>
+          <br/>
+
+        <div *ngIf="submitted && registerForm.controls.firstName.errors">
+<div *ngIf="submitted && registerForm.controls.firstName.errors.required" style="color: red;">
+FirstName is Required!!
+</div>
+
+        </div>
+        </div>
+        <div class="form-goup">
+          <label for="LastName">LastName</label>
+          <input formControlName="lastName" type="text" class="form-control"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls.lastName.errors}"/>
+        <br/>
+          <div *ngIf="submitted && registerForm.controls.lastName.errors">
+            <div *ngIf="submitted && registerForm.controls.lastName.errors.required" style="color: red;">
+            lastName is Required!!
+            </div>
+            
+                    </div>
+                    </div>
+        <div class="form-goup">
+          <label for="Email">Email</label>
+          <input formControlName="email" type="email" class="form-control"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls.email.errors}"/>
+          <br/>
+
+          <div *ngIf="submitted && registerForm.controls.email.errors">
+            <div *ngIf="submitted && registerForm.controls.email.errors.required" style="color: red;">
+            Email is Required!!
+            </div>
+            <div *ngIf="submitted && registerForm.controls.email.errors.email" style="color:red;">
+              Invalid email format!
+            </div>
+            
+                    </div>
+                    </div>
+        <div class="form-goup">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password" class="form-control"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls.password.errors}"/>
+          <br/>
+
+          <div *ngIf="submitted && registerForm.controls.password.errors">
+            <div *ngIf="submitted && registerForm.controls.password.errors.required" style="color:red;">
+            Password is Required!!
+            </div>
+            <div *ngIf="submitted && registerForm.controls.password.errors.minlength" style="color:red;">
+              Minimum Length is 6
+              </div>
+              <div *ngIf="submitted && registerForm.controls.password.errors.maxlength" style="color:red;">
+                Maximum Length is 10
+                </div>
+            
+                    </div>
+        </div>
+        <button class="btn btn-danger" style="margin-top: 20px;">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+</html>
